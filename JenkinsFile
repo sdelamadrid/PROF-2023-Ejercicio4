@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Backup) {
+            steps {
+                sh 'sqlite3 Employees.db < dobackup.sql'
+            }
+        }
         stage('Erase DB') {
             steps {
                 sh 'sqlite3 Employees.db < erasedb.sql'
@@ -10,6 +15,11 @@ pipeline {
         stage('New Schema') {
             steps {
                 sh 'sqlite3 Employees.db < sqlite.sql'
+            }
+        }
+        stage('Restore Data') {
+            steps {
+                sh 'sqlite3 Employees.db < backup.sql'
             }
         }
     }
