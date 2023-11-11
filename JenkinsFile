@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                sh 'rm -fr PROF-2023-Ejercicio4'
-                sh 'git clone https://github.com/sdelamadrid/PROF-2023-Ejercicio4.git'
+                echo 'Hello'
             }
         }
         stage('Hello') {
