@@ -1,5 +1,5 @@
-.mode insert
 .output backup.sql
+.mode insert regions
 SELECT * FROM regions;
 SELECT * FROM countries;
 SELECT * FROM locations;
