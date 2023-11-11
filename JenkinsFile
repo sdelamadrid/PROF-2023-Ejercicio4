@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Backup) {
+        stage('Backup') {
             steps {
                 sh 'sqlite3 Employees.db < dobackup.sql'
             }
