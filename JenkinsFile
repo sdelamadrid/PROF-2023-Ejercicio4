@@ -7,9 +7,9 @@ pipeline {
                 sh 'sqlite3 Employees.db < errasedb.sql'
             }
         }
-        stage('Hello') {
+        stage('New Schema') {
             steps {
-                echo 'Hello World'
+                sh 'sqlite3 Employees.db < sqlite.sql'
             }
         }
     }
