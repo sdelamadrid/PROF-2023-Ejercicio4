@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Erase DB') {
             steps {
-                sh 'sudo sqlite3 Employees.db < errasedb.sql'
+                sh 'sqlite3 Employees.db < errasedb.sql'
             }
         }
         stage('Hello') {
