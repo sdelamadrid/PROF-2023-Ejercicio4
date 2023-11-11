@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Erase DB') {
             steps {
-                echo 'Hello'
+                sh 'sudo sqlite3 Employees.db < errasedb.sql'
             }
         }
         stage('Hello') {
