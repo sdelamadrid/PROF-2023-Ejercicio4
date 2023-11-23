@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Erase DB') {
             steps {
-                sh 'sqlite3 Employees.db < erasedb.sql'
+                sh 'rm Employees.db'
             }
         }
         stage('New Schema') {
