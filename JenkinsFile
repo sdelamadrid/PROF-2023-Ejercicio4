@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Backup') {
             steps {
-                sh 'sqlite3 Employees.db < dobackup.sql'
+                sh 'sqlite3 Employees.db .dump | grep "^INSERT INTO" backupAux.sql > backup.sql'
             }
         }
         stage('Erase DB') {
